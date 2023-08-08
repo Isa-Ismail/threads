@@ -1,9 +1,10 @@
-import React from 'react'
+//app/page.tsx
+import { UserButton } from "@clerk/nextjs";
 
-interface Props {}
-
-const page = () => {
-  return <div>Threads</div>
+export default function Home() {
+  return (
+    <div>
+      <UserButton afterSignOutUrl="/"/>
+    </div>
+  )
 }
-
-export default page
