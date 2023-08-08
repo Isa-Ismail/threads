@@ -22,7 +22,6 @@ const layout: React.FC<Props> = ({children}) => {
                     {children}
                 </body>
             </html>
-            {children}
         </ClerkProvider>
     )
 }
