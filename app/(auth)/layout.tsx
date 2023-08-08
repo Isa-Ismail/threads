@@ -18,7 +18,7 @@ const layout: React.FC<Props> = ({children}) => {
     return (
         <ClerkProvider>
             <html lang='en'>
-                <body className={`${inter.className}`}>
+                <body className={`${inter.className} bg-dark-1`}>
                     {children}
                 </body>
             </html>
