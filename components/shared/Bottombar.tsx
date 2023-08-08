@@ -1,9 +1,42 @@
+'use client'
+import { sidebarLinks } from '@/constant'
 import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { usePathname } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
 interface Props {}
 
 const Bottombar = () => {
-  return <div>B</div>
+
+  const router = useRouter()
+  const pathname = usePathname()
+  return (
+    <section className='bottombar'>
+      <div className='bottombar_container'>
+        {
+          sidebarLinks.map(link => {
+            const isActive = (
+              pathname.includes(link.route) && link.route !== '/' || pathname === link.route
+            )
+            return (
+              <Link className={`leftsidebar_link ${isActive&&'bg-primary-500'}`} href={link.route} key={link.route}>
+              <Image
+                src={link.imgURL} 
+                alt={link.label}
+                width={24}
+                height={24}
+              />
+                <p className={`text-light-1 max-lg:hidden`}>
+                {link.label}
+              </p>
+            </Link>
+          )})
+        }
+      </div>
+    </section>
+  )
 }
 
 export default Bottombar
