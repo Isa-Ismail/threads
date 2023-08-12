@@ -21,12 +21,12 @@ import { Textarea } from '../ui/textarea'
 
 interface Props {
     user: {
-        id: string,
-        objectId: string,
-        username: string,
-        name: string,
-        bio: string,
-        image: string,
+        id: string | undefined;
+        objectId: string;
+        username: string | null | undefined;
+        name: string;
+        bio: string;
+        image: string | undefined;
     },
     btnTitle: string,
 }
@@ -48,8 +48,7 @@ const AccountProfile: React.FC<Props> = ({ user, btnTitle }) => {
         const file = e.target.files[0]
         setFiles([...files, file])
         if (!file.type.includes('image')) return
-        const f = reader.readAsDataURL(file)
-        console.log(f)
+        reader.readAsDataURL(file)
         reader.onload = () => {
           onChange(reader.result as string)
         }

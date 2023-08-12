@@ -7,7 +7,15 @@ const page = async () => {
 
   const user = await currentUser()
 
-  const userInfo = {}
+  const userInfo = {
+    id: '',
+    _id: '',
+    objectId: '',
+    username: '',
+    name:  '',
+    bio:  '',
+    image: ''
+  }
 
   const userData = {
     id: user?.id,
