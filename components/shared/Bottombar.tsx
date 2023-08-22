@@ -12,13 +12,14 @@ const Bottombar = () => {
 
   const router = useRouter()
   const pathname = usePathname()
+  console.log(pathname)
   return (
     <section className='bottombar'>
       <div className='bottombar_container'>
         {
           sidebarLinks.map(link => {
             const isActive = (
-              pathname.includes(link.route) && link.route !== '/' || pathname === link.route
+              pathname===(link.route)
             )
             return (
               <Link className={`leftsidebar_link ${isActive&&'bg-primary-500'}`} href={link.route} key={link.route}>
