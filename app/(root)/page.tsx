@@ -30,16 +30,12 @@ function findRanges(arr:string[]) {
         ranges.push(`${start}:${end}`);
     }
 
-    return ranges.join(', '); // Join the ranges with commas
+    return ranges.join(', '); 
 }
 
 const sequenceArray = sequence.trim().split('\n').map(item => item.trim());
 
 const ranges = findRanges(sequenceArray);
-
-console.log(ranges);
-
-console.log(sequenceArray);
 
 
 
