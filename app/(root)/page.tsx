@@ -1,7 +1,7 @@
 'use client';
 
 import { sequence } from "@/constant";
-import React from "react";
+import React, { useMemo } from "react";
 
 export default function Home() {
   
@@ -32,11 +32,9 @@ function findRanges(arr:string[]) {
     return ranges.join(', '); 
 }
 
-const sequenceArray = sequence.trim().split('\n').map(item => item.trim());
+const sequenceArray = useMemo(() => sequence.trim().split('\n').map(item => item.trim()), [sequence]);
 
-const ranges = findRanges(sequenceArray);
-
-
+  const ranges = useMemo(() => findRanges(sequenceArray), [sequenceArray]);
 
   return (
     <div>
