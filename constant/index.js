@@ -43,6 +43,7 @@ export const communityTabs = [
   { value: "requests", label: "Requests", icon: "/assets/request.svg" },
 ];
 
+
 export const sequence = `
 'N'
 'N'
