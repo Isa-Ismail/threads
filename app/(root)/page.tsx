@@ -34,7 +34,7 @@ function findRanges(arr:string[]) {
 
 const sequenceArray = useMemo(() => sequence.trim().split('\n').map(item => item.trim()), [sequence]);
 
-  const ranges = useMemo(() => findRanges(sequenceArray), [sequenceArray]);
+  const ranges = useMemo(() => findRanges(sequenceArray), [s]);
 
   return (
     <div>
